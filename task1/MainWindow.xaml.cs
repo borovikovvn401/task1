@@ -36,31 +36,31 @@ namespace task1
 
         public void update()
         {
-            int maxCount = EfModel.Init().Products.ToList().Count;
+            int maxCount = EfModel.Init().Services.ToList().Count;
 
-            IEnumerable<Product> products = EfModel.Init().Products
+            IEnumerable<Service> services = EfModel.Init().Services
                 .Where(p => p.Title.Contains(tbSearch.Text) || p.Description.Contains(tbSearch.Text));
 
            switch(cbSort.SelectedIndex)
             {
                 case 0:
-                    products = products.OrderBy(p => p.Title);
+                    services = services.OrderBy(p => p.Title);
                     break;
                 case 1:
-                    products = products.OrderByDescending(p => p.Title);
+                    services = services.OrderByDescending(p => p.Title);
                     break;
                 case 2:
-                    products = products.OrderByDescending(p => p.Cost);
+                    services = services.OrderByDescending(p => p.Cost);
                     break;
                 case 3:
-                    products = products.OrderBy(p => p.Cost);
+                    services = services.OrderBy(p => p.Cost);
                     break;
             }
 
-            lvProducts.ItemsSource = products.ToList();
+            lvProducts.ItemsSource = services.ToList();
 
 
-            tbCount.Text = products.ToList().Count + "/" + maxCount + " записей";
+            tbCount.Text = services.ToList().Count + "/" + maxCount + " записей";
 
         }
 

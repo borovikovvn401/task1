@@ -28,7 +28,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Grid.Column="0" Height="120" Width="120" Source="{Binding MainImagePath}" HorizontalAlignment="Left"></Image>
+                        <Image Grid.Column="0" Height="120" Width="120" Source="{Binding MainImage, FallbackValue={StaticResource picture}, TargetNullValue={StaticResource picture}}" HorizontalAlignment="Left"></Image>
                         <StackPanel Grid.Column="1" HorizontalAlignment="Right">
                             <TextBlock Text="{Binding Title}" Margin="20,0" Height="20" Name="tbTitle"></TextBlock>
                             <TextBlock Text="{Binding getCost}" Margin="20,0" Height="20" Name="tbCost"></TextBlock>

@@ -17,6 +17,7 @@ namespace task1.Efmodel
         public double Discount { get; set; }
         public string? Description { get; set; }
         public byte[]? MainImage { get; set; }
+        public string getCost => (int)Cost + " руб.";
 
         public virtual ICollection<ClientService> ClientServices { get; set; }
         public virtual ICollection<ServicePhoto> ServicePhotos { get; set; }

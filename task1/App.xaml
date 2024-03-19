@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:task1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <BitmapImage x:Key="picture" UriSource="Resources/Picture.jpg"></BitmapImage> 
     </Application.Resources>
 </Application>
